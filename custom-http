@@ -1,0 +1,10 @@
+root=""
+title="writings"
+# this p much makes the title just $root
+# "" is equal to $title being unset
+div_class="div"
+# addon is used by ./projects-gen
+license=""
+hyperlink="://"
+linkfile="link-list"
+css="style.css"
