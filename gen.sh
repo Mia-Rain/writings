@@ -7,7 +7,7 @@ bail() {
   unset ERR
   "${ERR:?$1}" || exit "${3:-1}"
 }
-[ "$domain" ] || domain="g.transcendent.ink"
+[ "$domain" ] || domain="transcendent.ink"
 [ "$license" ] || license="Licensed under Unlicense ~ Set it Free."
 [ "$stack" ] || stack="ssh"
 [ "$root" ] || root="~git"
@@ -27,12 +27,13 @@ done << EOF
 $in
 EOF
 : $((l+=4))
-## below is some jank to yank the project name
-printf '<head>
-<link rel="icon" href="/favicon.png">
-<link rel="stylesheet" href="/style.css">
-'
-[ "$css" ] && printf '<link rel="stylesheet" href="%s">\n' "$css"
+printf '<head>\n'
+if [ "$favicon" ]; then 
+  printf '<link rel="icon" href="https://%s">\n' "${domain}/${path}/${favicon}"
+else 
+  printf '<link rel="icon" href="favicon.png">\n;'
+fi
+[ "$css" ] && printf '<link rel="stylesheet" href="https://%s">\n' "${domain}/${path}/${css}"
 i=0; [ "$name" ] || while read -r p || [ "$p" ]; do
   [ "$i" -eq 1 ] && {
       p="${p#\#?}"; p=${p% *} # yank out any trailing/leading spaces
@@ -43,8 +44,8 @@ i=0; [ "$name" ] || while read -r p || [ "$p" ]; do
 done << EOF
 $in
 EOF
-#[ $((${#name}%3)) != 0 ] && bail "TITLE MUST BE AN ODD LENGTH"
-# the title should be odd for proper centering; no my problem tho
+###[ $((${#name}%3)) != 0 ] && bail "TITLE MUST BE AN ODD LENGTH"
+# the title should be odd for proper centering; not my problem tho
 [ "$((${#name}%3))" -ne 0 ] && : $((l+=1))
 echo "<title>${root:+:"${root}"/}${title:-"${name}"}</title>"
 printf '</head>
@@ -54,7 +55,8 @@ printf '</head>
 <pre>
 <center>
  ' "${div_class:-div}" # print initial setup
-# next gen header based on mean
+### next gen header based on mean
+# lmao once I code do math
 n=0; header=$(printf '┌'; until [ "$n" -eq "$((l+2))" ]; do   
   printf '─'
   : $((n+=1))
