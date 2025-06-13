@@ -1,1 +1,38 @@
-/usr/share/caddy/root/style.css
+root {
+	--font: black;
+	--bg: white;
+}
+body {
+	--font: black;
+	--bg: white;
+	font-family: Monoid;
+	font-size: 4vh;
+	font-weight: bold;
+	background-color: var(--bg);
+	color: var(--font);
+	margin: 0 auto;
+	text-align:left;
+}
+pre {
+	text-align: center;
+	align-items: center;
+}
+.right {
+	text-align: right;
+}
+@media (prefers-color-scheme: light) {
+	root {
+		--font: black;
+		--bg: white;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	root {
+		--bg: black;
+		--font: white;
+	}
+}
+@font-face {
+	font-family: "Monoid";
+	src: url("https://h.transcendent.ink/src/fonts/Monoid-Bold.ttf") format('truetype');
+}
