@@ -11,4 +11,5 @@ favicon.png.source
 gen.sh
 readme.sh
 link-list.sh
+CNAME
 # translated from the previous version of the script

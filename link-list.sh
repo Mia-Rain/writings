@@ -11,6 +11,9 @@ ignore_list="$(
 counter=1
 for i in ./*; do
   i="${i#./}"
+  case "$i" in
+    *'xcf'*) continue;;
+  esac
   case "$ignore_list" in
     *"$i"*) :;;
     *) 

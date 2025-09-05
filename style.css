@@ -34,5 +34,52 @@ pre {
 }
 @font-face {
 	font-family: "Monoid";
-	src: url("https://h.transcendent.ink/src/fonts/Monoid-Bold.ttf") format('truetype');
+	src: url("https://transcendent.ink/Monoid-Bold.ttf") format('truetype');
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: transparent;
+  padding: 10px;
+  grid-gap: 10px;
+  align-content: stretch;
+}
+.container > div {
+  background-color: transparent;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 15px;
+  grid-auto-flow: column row;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 35px; /* height of one row */
+}
+
+.grid-container > .item:nth-child(6n+1),
+.grid-container > .item:nth-child(6n+6){
+  grid-area: auto;
+}
+
+.grid-container > .item:nth-child(6n+2),
+.grid-container > .item:nth-child(6n+3),
+.grid-container > .item:nth-child(6n+4){
+  grid-column: auto;
+}
+
+.grid-container > .item:nth-child(6n+5){
+  grid-column: auto;
+}
+
+
+.imgs {
+  height:0;
+  width:0;
+  min-height:100%;
+  min-width:100%;
+  object-fit:cover
 }
