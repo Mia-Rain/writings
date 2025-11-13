@@ -95,7 +95,8 @@ line_counter=0; while read -r p || [ "$p" ]; do
       np="$nl"
     } || unset np
       op="${#p}"
-      [ "${p##*"${hyperlink}"}" != "$p" -a -e "${linkfile:-./link-list.txt}" ] && { 
+      : ${linkfile:=./link-list.txt}
+      [ "${p##*"${hyperlink}"}" != "$p" -a -e "${linkfile}" ] && { 
         while read -r c || [ "$c" ]; do
           [ "${c%%:*}" -eq "$link_num" ] && {
             clink="${c#*:}"
