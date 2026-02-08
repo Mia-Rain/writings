@@ -1,0 +1,19 @@
+##
+# this repo uses a really weird custom setup
+# that I made when I still wrote shell
+# heres how it works
+##
+# ./link-list.sh
+# used to generate link-list.txt
+## used by gen.sh for connecting links
+# ./readme.sh
+# used to generate README.txt 
+## main layout for gen.sh
+# ./gen.sh 
+## main gen script; use as below
+# bash ./gen.sh ./custom-http.txt < README.txt > index.html 
+##
+# bash ./link-list.sh > link-list.txt
+# bash ./readme.sh > README.txt
+# bash ./gen.sh ./custom-http.txt < README.txt > index.html
+##

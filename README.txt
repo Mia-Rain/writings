@@ -8,6 +8,7 @@ writings
 ://angel
 ://blow-off-my-face
 ://compounding-changes
+://every_side
 ://fleeting-years
 ://Headspace.html
 ://Headspace.pdf
@@ -34,5 +35,6 @@ writings
 ://screaming.notes
 ://screaming
 ://wait-around
+://your-eyes
 ://your_eyes
 ---

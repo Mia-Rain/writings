@@ -12,4 +12,5 @@ gen.sh
 readme.sh
 link-list.sh
 CNAME
+.INF
 # translated from the previous version of the script
