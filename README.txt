@@ -2,11 +2,14 @@
 writings
 ---
 ://01-README
+://20_hairties
 ://27
+://addicted_to_you
 ://AHigherPlain.pdf
 ://angel.notes
 ://angel
 ://blow-off-my-face
+://coming_home
 ://compounding-changes
 ://corrosive-pain
 ://CSA_WARNING_in-reflection
